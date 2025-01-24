@@ -1,0 +1,7 @@
+{
+    "api_url": "http://localhost:8000/api",
+    "agent_port": 62026,
+    "agent_protocol": "tcp",
+    "keepalive_interval": 60,
+    "hostname": "My super Agent"
+}
