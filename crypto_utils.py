@@ -8,6 +8,8 @@ import platform
 import uuid
 import hashlib
 import socket
+import hmac
+import json
 
 class CryptoUtils:
     def __init__(self, config):
@@ -92,10 +94,10 @@ class CryptoUtils:
         return mac
 
     def generate_machine_id(self):
-        hostname = self.config["hostname"] or socket.gethostname()
+        hostname = self.config.get("hostname", socket.gethostname())
         port = self.config["agent_port"]
         protocol = self.config["agent_protocol"]
-        os_info = platform.system() + platform.release()
+        os_info = platform.system() + " " + platform.release()
         mac_address = self.get_mac_address()
 
         if not mac_address:
@@ -104,3 +106,16 @@ class CryptoUtils:
         unique_string = f"{hostname}-{port}-{protocol}-{os_info}-{mac_address}"
         machine_id = hashlib.sha256(unique_string.encode()).hexdigest()
         return machine_id
+    
+    def generate_signature(self, secret, payload):
+        if type(secret) == str:
+            secret = secret.encode()
+
+        payload_str = json.dumps(payload, separators=(',', ':'))
+        signature = hmac.new(
+            secret,
+            payload_str.encode(),
+            hashlib.sha256
+        ).hexdigest()
+
+        return signature

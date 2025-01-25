@@ -1,3 +1,5 @@
 requests
 paramiko
 ansible-runner
+paho.mqtt
+chardet

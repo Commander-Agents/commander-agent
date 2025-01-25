@@ -3,6 +3,7 @@
     "agent_port": 62026,
     "agent_protocol": "tcp",
     "keepalive_interval": 300,
+    "hostname": "My super Agent",
     "mqtt": {
         "broker": "localhost",
         "port": "1883"
