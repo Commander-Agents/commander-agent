@@ -1,0 +1,17 @@
+# AGPL v3 License with Non-Commercial Restriction  
+
+Copyright (C) 2025 - Commander-Agents project  
+
+This program is free software: you can redistribute it and/or modify it  
+under the terms of the **GNU Affero General Public License** as published by the Free Software Foundation,  
+either version 3 of the License, or (at your option) any later version,  
+with the following additional restriction:  
+
+🚨 **Non-Commercial (NC) Restriction 🚨  
+Any use of this software for commercial purposes, including but not limited to  
+selling, reselling, providing it as a SaaS (Software as a Service),  
+or any direct or indirect monetization,  
+is strictly prohibited without a commercial license granted by Deadman.**  
+
+A copy of the AGPL v3 license is provided in this project under the file `LICENSE-AGPL.txt`  
+or is available at: https://www.gnu.org/licenses/agpl-3.0.html  
